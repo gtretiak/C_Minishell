@@ -59,9 +59,11 @@ The project is organized into several key components:
 * POSIX System Calls: For process management and file operations
 
 ## 🚀 Setup & Installation
-1. Clone the repository
-2. Compile with make command
-3. run ./minishell
+1. Clone the repository, cd there
+2. Clone the Libft repository https://github.com/gtretiak/C_libft
+3. Name it Libft
+4. Compile with make command
+5. run ./minishell
 
 ## 🌍 Real-World Applications
 1. Systems Programming: process management, signal handling, and file descriptors are essential for developing system-level software, daemons, and services that need to interact with the operating system.
