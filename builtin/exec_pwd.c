@@ -15,10 +15,10 @@
 void	exec_pwd(t_token *token)
 {
 	char	*current_path;
-	char	buffer[BUFFER_SIZE];
+	char	buffer[BUF_SIZE];
 
 	(void)token;
-	current_path = getcwd(buffer, BUFFER_SIZE);
+	current_path = getcwd(buffer, BUF_SIZE);
 	if (!current_path)
 	{
 		perror("pwd");

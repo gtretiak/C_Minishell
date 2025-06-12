@@ -1,7 +1,7 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
-INCLUDES = -I./42-libft
-LIBS = -lreadline -L./42-libft -lft
+INCLUDES = -I./Libft
+LIBS = -lreadline -L./Libft -lft
 NAME = minishell
 
 SRCS = \
@@ -76,18 +76,18 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@make -C ./42-libft
+	@make -C ./Libft
 	$(CC) $(CFLAGS) $(OBJS) $(LIBS) -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	@make clean -C ./42-libft
+	@make clean -C ./Libft
 	rm -f $(OBJS)
 
 fclean: clean
-	@make fclean -C ./42-libft
+	@make fclean -C ./Libft
 	rm -f $(NAME)
 
 re: fclean all

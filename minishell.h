@@ -26,9 +26,9 @@
 # include <unistd.h>
 # include <sys/stat.h>
 # include <sys/types.h>
-# include "./42-libft/libft.h"
+# include "./Libft/libft.h"
 
-# define BUFFER_SIZE 4096
+# define BUF_SIZE 4096
 # define GREEN "\001\033[32m\002"
 # define RESET "\001\033[0m\002"
 
