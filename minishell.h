@@ -6,7 +6,7 @@
 /*   By: gtretiak <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 13:01:48 by gtretiak          #+#    #+#             */
-/*   Updated: 2025/06/03 18:17:34 by gtretiak         ###   ########.fr       */
+/*   Updated: 2025/06/14 17:02:50 by gtretiak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # include <unistd.h>
 # include <sys/stat.h>
 # include <sys/types.h>
-# include "./Libft/libft.h"
+# include "./C_libft/libft.h"
 
 # define BUF_SIZE 4096
 # define GREEN "\001\033[32m\002"
