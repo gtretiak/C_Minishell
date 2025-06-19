@@ -3,7 +3,8 @@ CFLAGS = -Wall -Wextra -Werror -g
 INCLUDES = -I./Libft
 LIBS = -lreadline -L./C_libft -lft
 NAME = minishell
-
+LIBFT = libft.a
+LIBFT_DIR = C_libft/
 SRCS = \
 	./fill_pipes_cmd2.c \
 	./fill_pipes_cmd.c \
@@ -73,22 +74,35 @@ SRCS = \
 
 OBJS = $(SRCS:.c=.o)
 
-all: $(NAME)
+all: $(LIBFT) $(NAME)
+
+$(LIBFT):
+	@if [ -d $(LIBFT_DIR) ]; then \
+		echo "C-libft is already cloned."; \
+	else \
+		git clone git@github.com:gtretiak/C_libft.git $(LIBFT_DIR); \
+	fi
+	@if [ -f $(LIBFT_DIR)$(LIBFT) ]; then \
+		echo "libft.a is already compiled."; \
+	else \
+		$(MAKE) -C $(LIBFT_DIR); \
+	fi
 
 $(NAME): $(OBJS)
-	@make -C ./C_libft
+	@if [ ! -f $(NAME) ] || [ $(LIBFT) -nt $(NAME) ]; then \
+		make -C $(LIBFT_DIR); fi
 	$(CC) $(CFLAGS) $(OBJS) $(LIBS) -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	@make clean -C ./C_libft
+	@if [ -d $(LIBFT_DIR) ]; then make clean -C $(LIBFT_DIR); fi
 	rm -f $(OBJS)
 
 fclean: clean
-	@make fclean -C ./C_libft
-	rm -f $(NAME)
+	@if [ -d $(LIBFT_DIR) ]; then rm -rf $(LIBFT_DIR); fi
+	@if [ -f $(NAME) ]; then rm -f $(NAME); fi
 
 re: fclean all
 
