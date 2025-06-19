@@ -1,6 +1,11 @@
 # Minishell: Building a Custom Shell from Scratch
 ## 📋 Overview
 Minishell, or in other words, the command-line interpreter, is a custom implementation of a basic shell, similar to bash, but with a reduced feature set. The program allows users to interact with their operating system through text commands indirectly exploiting process management, file descriptors, signal handling, and parsing techniques.
+![minishell_architecture_revised](images/minishell_architecture_revised.png)
+![minishell_builtins_revised](images/minishell_builtins_revised.png)
+![minishell_redirections_pipes_revised](images/minishell_redirections_pipes_revised.png)
+![minishell_commands_revised](images/minishell_commands_revised.png)
+
 ## 🎯 Project Purpose & Objectives
 1. Gain a deep understanding of how shells work under the hood
 2. Master process creation, management, and inter-process communication
